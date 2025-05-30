@@ -1,43 +1,87 @@
-# Chirpy Starter
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# 🖋️ Contributing to **AIGC Watermarking Blog**
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+This project is a static Jekyll + Chirpy site hosted on **GitHub Pages**. Every article is just a Markdown file committed to the repository.
+We use a *plain* Git workflow—**submit a Pull Request, get it reviewed, merge, publish**—so no extra CMS or build server is required.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+## 🏃‍♂️ Quick Start
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+1. **Fork** this repository to your own account (click the *Fork* button top‑right on GitHub).
+2. **Clone** your fork locally:
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+   ```bash
+   git clone https://github.com/<your‑username>/aigcwatermarking.github.io.git
+   cd aigcwatermarking.github.io
+   ```
+3. **Create a post** (see below for naming and template).
+4. **Commit & push** to a new branch on your fork.
+5. **Open a Pull Request** targeting `main` on this repo.
+6. A maintainer will review, request changes if needed, and merge. GitHub Pages will rebuild automatically.
+
+> **Tip – GitHub Web Editor**: If you prefer, click *Add file → Create new file* in your fork to create the post directly in the browser, then open the PR. No local Git needed.
+
+
+
+## 📄 File‑Name & Location
+
+```
+_posts/YYYY-MM-DD-your-title.md
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+* **Date** `YYYY-MM-DD` should match the intended publication day.
+* **Slug** `your-title` should be lowercase, words separated by hyphens.
 
-## Usage
+Images go under `assets/img/…` (create sub‑folders if you like).
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-## Contributing
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+## ✨ Post Front‑Matter Template
 
-## License
+Paste the block below at the top of your new file and fill in each field.
 
-This work is published under [MIT][mit] License.
+```yaml
+---
+layout:   post
+title:    "Concise, Descriptive Title"
+author:   "Your Name"          # Optional—omit to hide
+date:     2025-mm-dd            # ISO format
+categories: [Image Watermarking]     # One or more high‑level buckets
+tags:       [Diffusion, Robustness]  # Fine‑grained keywords
+series:     "Deep Dive #1"          # Optional—link multi‑part series
+summary: |
+  Short abstract (1–3 sentences) shown on the home page.
+keywords: [AIGC, Watermarking, Provenance]  # Optional, for SEO
+comments: true      # true ➜ enable Utterances/Disqus; false ➜ hide
+cover:    /assets/img/covers/your-image.png  # Optional teaser image
+---
+```
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+Start the body right after the closing `---`.
+
+### Body Guidelines
+
+* Use Markdown headings starting with `##` (the title is automatically `#`).
+* Mathematical formulas (`$$`), code blocks <code>\`\`\`</code>, and Mermaid diagrams are supported out of the box.
+* Insert figures with captions and reference them in the text.
+* Cite sources with plain links or footnotes `[^1]`.
+* End with an optional **Further Reading** or **Acknowledgements** section.
+
+
+## 🔍 Local Preview (optional)
+
+If you want to test the post locally before pushing:
+
+```bash
+bundle install          # first time only – installs Jekyll & deps
+bundle exec jekyll s    # builds site and serves at http://127.0.0.1:4000
+```
+
+The Chirpy theme will hot‑reload on file changes.
+
+
+## ✅ Commit Style & PR Checklist
+
+* Write clear commit messages ("Add post: *Transformer Watermarks*" rather than "Update").
+* Spell‑check and run Markdown lint if you have it.
+* Ensure images are reasonably compressed (PNG/JPEG ≤ 1 MB if possible).
+* Confirm the post renders correctly in the local preview or in the *Files changed* diff view.
